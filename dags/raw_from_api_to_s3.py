@@ -66,7 +66,7 @@ def get_and_transfer_api_data_to_s3(**context):
                 *
             FROM
                 read_csv_auto('https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime={start_date}&endtime={end_date}') AS res
-        ) TO 's3://prod/{LAYER}/{SOURCE}/{start_date}/{start_date}_00-00-00.gz.parquet';
+        ) TO 's3://petlakehouse/{LAYER}/{SOURCE}/{start_date}/{start_date}_00-00-00.gz.parquet';
 
         """,
     )
